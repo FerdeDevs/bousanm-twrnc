@@ -14,9 +14,9 @@ const index = () => {
             >
                 <StatusBar hidden={true} />
 
-                <View style={{ flex: 1, justifyContent: "flex-end", marginBottom: 12 }} >
+                <View style={{ flex: 1, justifyContent: "flex-end", marginBottom: 28 }} >
                     <Text style={{ fontFamily: "poppins", color: "white", fontSize: 20, marginBottom: 12 }}>
-                        Welcome to Our App
+                        Bienvenu sur Bousanm
                     </Text>
                     <Text style={{ fontFamily: "poppins", color: "rgba(255,255,255,0.6)", lineHeight: 24, marginBottom: 24 }} >
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo

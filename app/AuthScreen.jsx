@@ -38,9 +38,6 @@ const AuthScreen = () => {
                             borderColor: '#E5E7EB',
                             borderRadius: 8,
                         }} />
-                    <Pressable onPress={() => router.push('tabs')}>
-                        <Text>Hello</Text>
-                    </Pressable>
                     <Link
                         // href="HomeScreen"
                         href="tabs"

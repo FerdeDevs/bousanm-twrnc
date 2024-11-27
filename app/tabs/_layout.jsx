@@ -18,8 +18,9 @@ const TabsLayout = () => {
             borderTopWidth: 0,
             elevation: 0,//android
             shadowOpacity: 0,//iphone
-            height: 50,
+            height: 60,
             paddingTop: 10,
+            // paddingBottom: 10,
             paddingHorizontal: 20,
         },
     }
@@ -49,7 +50,7 @@ const TabsLayout = () => {
                 name="ScanCode"
                 options={{
                     tabBarIcon: ({ focused }) => (
-                        <View style={{ position: "absolute", width: 65, height: 65, borderRadius: 200, marginHorizontal: 28, flexDirection: "row", alignItems: "center", justifyContent: "center", borderColor: "#1e3a8a", borderWidth: 1, backgroundColor: "#1d4ed8", elevation: 2, shadowColor: "#000", shadowOpacity: 2, }}>
+                        <View style={{ position: "absolute", bottom: 10, width: 65, height: 65, borderRadius: 200, marginHorizontal: 28, flexDirection: "row", alignItems: "center", justifyContent: "center", backgroundColor: "#1d4ed8" }}>
                             <MaterialCommunityIcons name="line-scan" size={30} color="#FFF" />
                             {/* <View style={[{ width: 16, height: 1.5, marginTop: 4 }, focused ? { backgroundColor: "#1e3a8a" } : { backgroundColor: "transparent" },]} /> */}
                         </View>
