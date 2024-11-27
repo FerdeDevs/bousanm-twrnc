@@ -1,12 +1,13 @@
 import { View, Text, Image, ScrollView, Pressable, Dimensions } from 'react-native'
 import React from 'react'
-import ImgBackground from './../components/ImgBackground'
+import ImgBackground from '../../components/ImgBackground'
 import Ionicons from '@expo/vector-icons/Ionicons'
 import Carousel from "react-native-reanimated-carousel"
-import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
+import FontAwesome5 from '@expo/vector-icons/FontAwesome5'
+import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 import { Notification, EmptyWallet, MoneyRecive, WalletMoney, Bubble, ScanBarcode, ArrowSwapHorizontal, MoneySend, Moneys, } from 'iconsax-react-native';
 
-const HomeScreen = () => {
+const FirstScreen = () => {
     var { width, height } = Dimensions.get("window");
     const images = [
         {
@@ -34,25 +35,25 @@ const HomeScreen = () => {
         {
             id: 1,
             icon: <EmptyWallet size="27" color="#000" variant="TwoTone" />,
-            name: "Ti kanè Bousanm",
+            name: "Ti kanè \n Bousanm",
             desc: "Profitez de placements à court terme avec un taux d'intérêt compétitif de 12% par an, sur des périodes allant de 6 à 36 mois.",
         },
         {
             id: 2,
             icon: <WalletMoney size="27" color="#000" variant="TwoTone" />,
-            name: "Sòl (Mutuelle)",
+            name: "Sòl \n ",
             desc: "Nous proposons des services de mutuelle pour sécuriser vos investissements tout en permettant une gestion collective de vos fonds.",
         },
         {
             id: 3,
             icon: <Moneys size="27" color="#000" variant="TwoTone" />,
-            name: "Placement Bousanm",
+            name: "Placement  \n",
             desc: "Un carnet de gestion de portefeuille vous permettant de suivre vos investissements en toute simplicité, avec des options de dépôt et de retrait flexibles.",
         },
         {
             id: 4,
             icon: <Bubble size="27" color="#000" variant="TwoTone" />,
-            name: "Gestion Patrimoine",
+            name: "Gestion \n Patrimoine",
             desc: "Maximisez la valeur de vos actifs grâce à nos services de gestion de patrimoine, avec des conseils personnalisés pour optimiser vos investissements à long terme.",
         },
     ];
@@ -89,8 +90,8 @@ const HomeScreen = () => {
                 <View style={{ paddingHorizontal: 16, paddingVertical: 22 }}>
                     <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
                         <View style={{ flexDirection: "row", alignItems: "center", gap: 8, marginBottom: 16 }}>
-                            <Pressable style={{ width: 50, height: 50, borderRadius: 100, backgroundColor: "#e0e0e0", padding: 4, overflow: "hidden" }}>
-                                <Image source={require('../assets/images/user.png')} style={{ width: "100%", height: "100%", marginTop: 6 }} />
+                            <Pressable style={{ width: 40, height: 40, borderRadius: 100, overflow: "hidden" }}>
+                                <Image source={require('../../assets/images/user.png')} style={{ width: "100%", height: "100%" }} />
                             </Pressable>
                             <View>
                                 <Text style={{ fontFamily: "poppinsBold", fontSize: 14 }}>Hello 👋🏽, Mesidor</Text>
@@ -163,22 +164,22 @@ const HomeScreen = () => {
                         <View style={{ borderRadius: 16, flexDirection: "column", justifyContent: "space-between" }}>
                             <View>
                                 <Text style={{ fontFamily: "poppinsMedium", fontSize: 22, color: "#fff", textAlign: "right" }} >Bousanm</Text>
-                                <Text style={{ fontFamily: "poppins", fontSize: 14, color: "#fff", fontSize: 12, marginTop: -4, textAlign: "right" }} >Ti Kane</Text>
+                                <Text style={{ fontFamily: "poppins", fontSize: 14, color: "#fff", fontSize: 12, marginTop: -4, textAlign: "right" }} >BS</Text>
 
                             </View>
                             <View style={{ flexDirection: "row", justifyContent: "space-between", gap: 5 }} >
-                                <View style={{ borderRadius: 10, paddingVertical: 8, borderColor: "#1e3a8a", borderWidth: 2, borderStyle: "dashed", paddingHorizontal: 16 }}>
-                                    <Text style={{ fontFamily: "poppinsMedium", fontSize: 14, color: "#FFF", fontSize: 12, textAlign: "right" }} >Part</Text>
+                                <View style={{ borderRadius: 10, paddingVertical: 3, borderColor: "#1e3a8a", borderWidth: 1, borderStyle: "dashed", paddingHorizontal: 12 }}>
+                                    <Text style={{ fontFamily: "poppins", fontSize: 11, color: "#FFF", textAlign: "right" }} >Part</Text>
                                     <View style={{ flexDirection: "row", gap: 8 }}>
-                                        <FontAwesome5 name="hand-holding-usd" size={24} color="#fff" />
-                                        <Text style={{ fontFamily: "poppinsBold", fontSize: 22, color: "#fff", textAlign: "right" }} >3</Text>
+                                        <FontAwesome5 name="hand-holding-usd" size={20} color="#fff" />
+                                        <Text style={{ fontFamily: "poppinsMedium", fontSize: 18, color: "#fff", textAlign: "right" }} >3</Text>
                                     </View>
                                 </View>
-                                <View style={{ borderRadius: 10, paddingVertical: 8, borderColor: "#1e3a8a", borderWidth: 2, borderStyle: "dashed", paddingHorizontal: 16 }}>
-                                    <Text style={{ fontFamily: "poppinsMedium", fontSize: 14, color: "#FFF", fontSize: 12, textAlign: "right" }} >Part</Text>
+                                <View style={{ borderRadius: 10, paddingVertical: 3, borderColor: "#1e3a8a", borderWidth: 1, borderStyle: "dashed", paddingHorizontal: 12 }}>
+                                    <Text style={{ fontFamily: "poppins", fontSize: 11, color: "#FFF", textAlign: "right" }} >Touchée</Text>
                                     <View style={{ flexDirection: "row", gap: 8 }}>
-                                        <FontAwesome5 name="hand-holding-usd" size={24} color="#fff" />
-                                        <Text style={{ fontFamily: "poppinsBold", fontSize: 22, color: "#fff", textAlign: "right" }} >3</Text>
+                                        <FontAwesome6 name="sack-dollar" size={18} color="#fff" />
+                                        <Text style={{ fontFamily: "poppinsMedium", fontSize: 18, color: "#fff", textAlign: "right" }} >39</Text>
                                     </View>
                                 </View>
                             </View>
@@ -232,6 +233,7 @@ const HomeScreen = () => {
                                         justifyContent: "center",
                                         alignItems: "center"
                                     }}>{item.icon}</View>
+                                    <Text style={{ fontFamily: "poppinsMedium", fontSize: 10, textAlign: "center", marginTop: 5 }}>{item.name}</Text>
                                 </Pressable>
                             ))}
                         </View>
@@ -297,12 +299,10 @@ const HomeScreen = () => {
                                 <Text style={{ fontFamily: "poppinsMedium", fontSize: 12 }}>12/03/2024</Text>
                             </View>
                         </View> */}
-
                 </View>
-
             </ScrollView>
         </View>
     )
 }
 
-export default HomeScreen
+export default FirstScreen

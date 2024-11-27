@@ -1,7 +1,7 @@
 import { View, Text, TextInput, ScrollView, StatusBar, Pressable, Alert, Button } from 'react-native'
 import React from 'react'
 import ImgBackground from '../components/ImgBackground'
-import { Link } from 'expo-router'
+import { Link, router } from 'expo-router'
 
 const AuthScreen = () => {
 
@@ -38,9 +38,12 @@ const AuthScreen = () => {
                             borderColor: '#E5E7EB',
                             borderRadius: 8,
                         }} />
-
+                    <Pressable onPress={() => router.push('tabs')}>
+                        <Text>Hello</Text>
+                    </Pressable>
                     <Link
-                        href="HomeScreen"
+                        // href="HomeScreen"
+                        href="tabs"
                         style={{ backgroundColor: "#1E3A8A", padding: 8, fontFamily: 'poppinsMedium', fontSize: 15, textAlign: "center", borderRadius: 8, marginTop: 16, color: "#FFFFFF" }}
                     >
                         Connectez Vous
