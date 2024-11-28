@@ -1,6 +1,8 @@
-import { View, Text, ScrollView } from 'react-native'
-import React from 'react'
+import { View, Text, ScrollView, StyleSheet } from 'react-native'
+import React, { useState } from 'react'
+import { Dropdown } from 'react-native-element-dropdown'
 import AntDesign from '@expo/vector-icons/AntDesign'
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons'
 import ImgBackground from '../../components/ImgBackground'
 
 const HistoricScreen = () => {
@@ -11,14 +13,60 @@ const HistoricScreen = () => {
         { id: 4, date: "09/03/2024", amount: 300, type: "withdrawal" },
         { id: 5, date: "08/03/2024", amount: 200, type: "deposit" },
     ]
+    const down = [
+        { label: 'All', value: '1' },
+        { label: 'Compte 2', value: '2' },
+        { label: 'Compte 3', value: '3' }
+    ];
+    const [value, setValue] = useState(null);
+    const [isFocus, setIsFocus] = useState(false);
+
+    const renderLabel = () => {
+        if (value || isFocus) {
+            return (
+                <Text style={[styles.label, isFocus && { color: 'blue' }]}>
+                    Dropdown label
+                </Text>
+            );
+        }
+        return null;
+    };
     return (
         <View style={{ flex: 1 }}>
             <ImgBackground />
-            <ScrollView showsVerticalScrollIndicator={false} style={{ paddingHorizontal: 16 }} >
-                <View style={{ marginBottom: 24 }}>
-                    <Text style={{ fontFamily: "poppinsMedium", fontSize: 16 }}>
-                        Historique
+            <View style={{ paddingHorizontal: 16 }} >
+                <View style={{ marginTop: 24 }}>
+                    <Text style={{ fontFamily: "poppinsMedium", fontSize: 14, marginBottom: 16 }}>
+                        Historique de transactions
                     </Text>
+                    <Dropdown
+                        style={[styles.dropdown, isFocus && { borderColor: 'blue' }]}
+                        placeholderStyle={styles.placeholderStyle}
+                        selectedTextStyle={styles.selectedTextStyle}
+                        inputSearchStyle={styles.inputSearchStyle}
+                        iconStyle={styles.iconStyle}
+                        data={down}
+                        maxHeight={300}
+                        labelField="label"
+                        valueField="value"
+                        //placeholder={!isFocus ? 'Selectionner' : '...'}
+                        value={value}
+                        onFocus={() => setIsFocus(true)}
+                        onBlur={() => setIsFocus(false)}
+                        onChange={item => {
+                            setValue(item.value);
+                            setIsFocus(false);
+                        }}
+                        renderLeftIcon={() => (
+                            <MaterialCommunityIcons name="transfer"
+                                style={styles.icon}
+                                color={isFocus ? 'blue' : 'black'}
+                                size={20} />
+
+                        )}
+                    />
+                </View>
+                <ScrollView showsVerticalScrollIndicator={false} style={{ marginBottom: 130 }}>
                     {
                         data.map((item, index) => {
                             return (
@@ -64,11 +112,53 @@ const HistoricScreen = () => {
                             )
                         })
                     }
-                </View>
+                </ScrollView>
 
-            </ScrollView>
+
+            </View>
         </View >
     )
 }
+
+const styles = StyleSheet.create({
+    dropdown: {
+        backgroundColor: "rgba(255,255,255,0.5)",
+        height: 50,
+        borderColor: '#000',
+        borderWidth: 0.5,
+        borderRadius: 10,
+        paddingHorizontal: 8,
+        marginBottom: 16,
+    },
+    icon: {
+        marginRight: 5,
+    },
+    label: {
+        position: 'absolute',
+        backgroundColor: 'white',
+        left: 22,
+        top: 8,
+        zIndex: 999,
+        paddingHorizontal: 8,
+        fontSize: 14,
+        fontFamily: 'poppins',
+    },
+    placeholderStyle: {
+        fontSize: 16,
+        fontFamily: 'poppins',
+    },
+    selectedTextStyle: {
+        fontSize: 16,
+        fontFamily: 'poppins',
+    },
+    iconStyle: {
+        width: 20,
+        height: 20,
+    },
+    inputSearchStyle: {
+        height: 40,
+        fontSize: 16,
+    },
+});
 
 export default HistoricScreen

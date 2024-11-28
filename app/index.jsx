@@ -1,12 +1,11 @@
-import { View, Text, ImageBackground, StatusBar, Dimensions } from 'react-native'
+import { View, Text, ImageBackground, StatusBar, TouchableOpacity } from 'react-native'
 import React from 'react'
-import { Link } from 'expo-router'
-import { LinearGradient } from "expo-linear-gradient";
+import { Link, router } from 'expo-router'
+import AntDesign from '@expo/vector-icons/AntDesign'
+import { LinearGradient } from "expo-linear-gradient"
+
 const index = () => {
-    var { width, height } = Dimensions.get("window");
     return (
-
-
         <ImageBackground source={require('../assets/images/onboard.jpg')} style={{ flex: 1, position: "relative" }}>
             <LinearGradient
                 style={{ flex: 1, paddingHorizontal: 10 }}
@@ -23,7 +22,14 @@ const index = () => {
                         laboriosam delectus accusantium rem temporibus ullam impedit rerum
                         recusandae ratione quibusdam!
                     </Text>
-                    <Link href="AuthScreen" style={{ backgroundColor: "white", padding: 8, fontFamily: 'poppinsMedium', fontSize: 15, textAlign: "center", borderRadius: 10 }} >Get Started </Link>
+
+                    {/* Get Started Button */}
+                    <TouchableOpacity onPress={() => router.push('AuthScreen')} style={{ height: 45, backgroundColor: "#fff", borderRadius: 10, alignItems: "center", justifyContent: "center" }}>
+                        <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 6 }}>
+                            <Text style={{ fontFamily: "poppins", fontSize: 14, color: "#172554", marginBottom: -3 }}>Get Started</Text>
+                            <AntDesign name="arrowright" size={18} color="#172554" />
+                        </View>
+                    </TouchableOpacity>
                 </View>
             </LinearGradient>
 

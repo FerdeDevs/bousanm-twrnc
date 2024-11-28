@@ -5,6 +5,7 @@ import Ionicons from '@expo/vector-icons/Ionicons'
 import Carousel from "react-native-reanimated-carousel"
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5'
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
+import { LinearGradient } from 'expo-linear-gradient'
 import { Notification, EmptyWallet, MoneyRecive, WalletMoney, Bubble, ScanBarcode, ArrowSwapHorizontal, MoneySend, Moneys, } from 'iconsax-react-native';
 
 const FirstScreen = () => {
@@ -88,14 +89,14 @@ const FirstScreen = () => {
             <ImgBackground />
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={{ paddingHorizontal: 16, paddingVertical: 22 }}>
-                    <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
+                    <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
                         <View style={{ flexDirection: "row", alignItems: "center", gap: 8, marginBottom: 16 }}>
                             <Pressable style={{ width: 40, height: 40, borderRadius: 100, overflow: "hidden" }}>
                                 <Image source={require('../../assets/images/user.png')} style={{ width: "100%", height: "100%" }} />
                             </Pressable>
                             <View>
-                                <Text style={{ fontFamily: "poppinsBold", fontSize: 14 }}>Hello 👋🏽, Mesidor</Text>
-                                <Text style={{ fontFamily: "poppinsMedium", fontSize: 12, marginTop: -4 }}>#6534267</Text>
+                                <Text style={{ fontFamily: "poppinsMedium", fontSize: 14 }}>Hello 👋🏽, Mesidor</Text>
+                                <Text style={{ fontFamily: "poppinsMedium", fontSize: 12, marginTop: -4, color: "grey" }}>#6534267</Text>
                             </View>
                         </View>
                         <View style={{ position: "relative", marginRight: 10 }}>
@@ -138,7 +139,14 @@ const FirstScreen = () => {
                         </View>
 
                     </View>
-                    <View style={{ backgroundColor: "#172554", width: "100%", borderRadius: 10, padding: 16, flexDirection: "row", justifyContent: "space-between", overflow: "hidden" }}>
+                    <LinearGradient
+                        // Start and end positions for the gradient
+                        start={{ x: 0, y: 0 }}
+                        end={{ x: 1, y: 1 }}
+                        // Gradient colors
+                        colors={['#004e92', '#000428']}
+                        style={{ width: "100%", borderRadius: 10, padding: 16, flexDirection: "row", justifyContent: "space-between", overflow: "hidden" }}
+                    >
                         <View style={{ height: 140, flexDirection: "column", justifyContent: "space-between" }}>
                             <View>
                                 <View style={{ flexDirection: "row", alignItems: "center", gap: 16 }}>
@@ -168,14 +176,14 @@ const FirstScreen = () => {
 
                             </View>
                             <View style={{ flexDirection: "row", justifyContent: "space-between", gap: 5 }} >
-                                <View style={{ borderRadius: 10, paddingVertical: 3, borderColor: "#1e3a8a", borderWidth: 1, borderStyle: "dashed", paddingHorizontal: 12 }}>
+                                <View style={{ borderRadius: 10, paddingVertical: 3, borderColor: "rgba(255,255,255,0.2)", borderWidth: 1, borderStyle: "dashed", paddingHorizontal: 12 }}>
                                     <Text style={{ fontFamily: "poppins", fontSize: 11, color: "#FFF", textAlign: "right" }} >Part</Text>
                                     <View style={{ flexDirection: "row", gap: 8 }}>
                                         <FontAwesome5 name="hand-holding-usd" size={20} color="#fff" />
                                         <Text style={{ fontFamily: "poppinsMedium", fontSize: 18, color: "#fff", textAlign: "right" }} >3</Text>
                                     </View>
                                 </View>
-                                <View style={{ borderRadius: 10, paddingVertical: 3, borderColor: "#1e3a8a", borderWidth: 1, borderStyle: "dashed", paddingHorizontal: 12 }}>
+                                <View style={{ borderRadius: 10, paddingVertical: 3, borderColor: "rgba(255,255,255,0.2)", borderWidth: 1, borderStyle: "dashed", paddingHorizontal: 12 }}>
                                     <Text style={{ fontFamily: "poppins", fontSize: 11, color: "#FFF", textAlign: "right" }} >Touchée</Text>
                                     <View style={{ flexDirection: "row", gap: 8 }}>
                                         <FontAwesome6 name="sack-dollar" size={18} color="#fff" />
@@ -184,7 +192,8 @@ const FirstScreen = () => {
                                 </View>
                             </View>
                         </View>
-                    </View>
+                    </LinearGradient>
+
                 </View>
                 <View style={{ paddingHorizontal: 16, paddingVertical: 1 }}>
                     <View style={{ marginBottom: 32, paddingHorizontal: 12 }}>
@@ -271,34 +280,6 @@ const FirstScreen = () => {
                             />
                         )}
                     />
-                    {/* <View style={{ marginBottom: 24 }}>
-                            <Text style={{ fontFamily: "poppinsMedium", fontSize: 12 }}>
-                                Historique
-                            </Text>
-                            <View style={{
-                                backgroundColor: "#fff",
-                                borderRadius: 16,
-                                padding: 16,
-                                marginBottom: 16,
-                                shadowColor: "#000",
-                                shadowOffset: { width: 0, height: 1 }
-                            }}>
-                                <Text style={{ fontFamily: "poppins", fontSize: 12 }}>Dernières Transaction</Text>
-                                <View style={{
-                                    flexDirection: "row",
-                                    justifyContent: "space-between",
-                                    alignItems: "center",
-                                    marginVertical: 12
-                                }}>
-                                    <Text style={{ fontFamily: "poppinsBold", fontSize: 18 }}>600 gds</Text>
-                                    <View style={{ flexDirection: "row", alignItems: "center", gap: 4 }} >
-                                        <Text style={{ fontFamily: "poppinsMedium", fontSize: 12 }}>Deposit</Text>
-                                        <AntDesign name="arrowdown" size={12} color="#1e40af" />
-                                    </View>
-                                </View>
-                                <Text style={{ fontFamily: "poppinsMedium", fontSize: 12 }}>12/03/2024</Text>
-                            </View>
-                        </View> */}
                 </View>
             </ScrollView>
         </View>

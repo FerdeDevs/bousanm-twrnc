@@ -1,7 +1,8 @@
-import { View, Text, TextInput, ScrollView, StatusBar, Pressable, Alert, Button } from 'react-native'
+import { View, Text, TextInput, StatusBar, TouchableOpacity } from 'react-native'
 import React from 'react'
 import ImgBackground from '../components/ImgBackground'
 import { Link, router } from 'expo-router'
+import AntDesign from '@expo/vector-icons/AntDesign'
 
 const AuthScreen = () => {
 
@@ -38,23 +39,28 @@ const AuthScreen = () => {
                             borderColor: '#E5E7EB',
                             borderRadius: 8,
                         }} />
-                    <Link
-                        // href="HomeScreen"
+                    <TouchableOpacity onPress={() => router.push('tabs')} style={{ marginTop: 16, height: 45, backgroundColor: "#1E3A8A", borderRadius: 10, alignItems: "center", justifyContent: "center" }}>
+                        <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 6 }}>
+                            <Text style={{ fontFamily: "poppins", fontSize: 14, color: "#fff", marginBottom: -3 }}>Connecter</Text>
+                            <AntDesign name="login" size={14} color="#fff" />
+                        </View>
+                    </TouchableOpacity>
+                    {/* <Link
                         href="tabs"
                         style={{ backgroundColor: "#1E3A8A", padding: 8, fontFamily: 'poppinsMedium', fontSize: 15, textAlign: "center", borderRadius: 8, marginTop: 16, color: "#FFFFFF" }}
                     >
                         Connectez Vous
-                    </Link>
+                    </Link> */}
 
                     <View style={{ flexDirection: "row", width: "99%" }}>
                         <Text style={{ fontFamily: 'poppins', marginTop: 16, }}>
                             Vous n'avez pas de compte?
                         </Text>
-                        <Pressable >
+                        <TouchableOpacity >
                             <Text style={{ fontFamily: 'poppins', marginTop: 16, color: "#1E3A8A", textDecorationLine: 'underline' }}>
                                 Inscrivez-vous ici
                             </Text>
-                        </Pressable>
+                        </TouchableOpacity>
 
                     </View>
                 </View>
