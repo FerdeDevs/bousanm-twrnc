@@ -51,7 +51,6 @@ const AuthScreen = () => {
                     >
                         Connectez Vous
                     </Link> */}
-
                     <View style={{ flexDirection: "row", width: "99%" }}>
                         <Text style={{ fontFamily: 'poppins', marginTop: 16, }}>
                             Vous n'avez pas de compte?
@@ -61,7 +60,6 @@ const AuthScreen = () => {
                                 Inscrivez-vous ici
                             </Text>
                         </TouchableOpacity>
-
                     </View>
                 </View>
 

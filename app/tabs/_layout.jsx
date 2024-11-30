@@ -3,7 +3,7 @@ import Foundation from '@expo/vector-icons/Foundation';
 import React from 'react'
 import { Tabs } from 'expo-router'
 import AntDesign from '@expo/vector-icons/AntDesign'
-import { Text, View } from 'react-native'
+import { Pressable, View } from 'react-native'
 
 const TabsLayout = () => {
     const screenOptions = {
@@ -23,6 +23,16 @@ const TabsLayout = () => {
             // paddingBottom: 10,
             paddingHorizontal: 20,
         },
+        tabBarButton: (props) => (
+            <Pressable
+                {...props}
+                android_ripple={{ borderless: true, radius: 0 }} // Supprime l'effet de ripple Android
+                style={({ pressed }) => [
+                    props.style,
+                    pressed && { opacity: 1 }, // Empêche tout effet visuel lors du clic
+                ]}
+            />
+        ),
     }
     return (
         <Tabs screenOptions={screenOptions}>

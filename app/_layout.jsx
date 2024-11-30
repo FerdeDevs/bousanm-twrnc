@@ -28,6 +28,8 @@ export default function RootLayout() {
   return (
     <Stack screenOptions={{ headerShown: false }}>
       <Stack.Screen name="index" />
+      <Stack.Screen name="FAQScreen" />
+      <Stack.Screen name="ServicesScreen" />
       <Stack.Screen name="TermsConditions" />
       <Stack.Screen name="tabs" />
     </Stack>

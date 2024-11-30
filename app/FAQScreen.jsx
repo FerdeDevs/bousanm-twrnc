@@ -1,15 +1,21 @@
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native'
-import ImgBackground from '../components/ImgBackground'
-import { ArrowLeft } from 'iconsax-react-native'
-import { router } from 'expo-router'
+import {
+    View,
+    Text,
+    TouchableOpacity,
+    StyleSheet,
+    ScrollView,
+} from 'react-native';
 import React from 'react'
+import { ArrowLeft } from 'iconsax-react-native'
+import ImgBackground from '../components/ImgBackground'
+import { router } from 'expo-router'
 
-const TermsConditions = () => {
+const FAQScreen = () => {
     const text = [
         {
             id: 1,
             question: "Sommes-nous une entreprise virtuelles?",
-            reponse: "Lorem ipsum dolor sit amet consectetur adipisicing elit.Mollitia animi, ex cum placeat quod nostrum id laudantium aperiam neque, quos in sit iste alias, nulla odio cupiditate inventore modi necessitatibus distinctio.Neque, minima blanditiis minus animi perferendis pariatur maiores rerum error nostrum! Magni perspiciatis, ipsam eius molestias, provident qui inventore libero voluptas deleniti sed ducimus atque quidem a! Qui ab quibusdam quod repudiandae asperiores ipsam.Eaque delectus magnam voluptatum beatae odit? In officiis repellat odit enim doloribus dolorum.Laudantium consequuntur perferendis officiis ad, quae eveniet consequatur hic! Placeat magnam, facere atque, aperiam, voluptatibus dolores ut laudantium quibusdam qui consequatur corrupti corporis at? Nostrum et sunt earum, itaque totam autem in laudantium praesentium illo voluptates consequatur, optio vero ad voluptatibus sint iste nulla sequi! Ut placeat delectus neque odit beatae cum atque.Voluptate repudiandae necessitatibus aliquid rem vero dicta eligendi, aperiam molestiae, possimus reprehenderit placeat nihil pariatur commodi at consequuntur, natus aspernatur fugit sed nam voluptatibus quae quisquam deserunt nostrum itaque? Enim eligendi doloribus blanditiis aut iste inventore nam id tempore et fugiat ipsum optio officiis ad cupiditate quidem facilis veritatis veniam nesciunt deserunt saepe ex, aspernatur libero doloremque? Dolores velit ducimus vel a repellendus? Corporis ullam quod omnis at praesentium          "
+            reponse: "Nous Sommes une entreprise physique avec une équipe compétente dynamique et sérieuse dans divers domaine."
         },
         {
             id: 2,
@@ -23,14 +29,14 @@ const TermsConditions = () => {
         }
     ]
     return (
-        <View style={{ flex: 1, }}>
+        <View style={styles.container}>
             <ImgBackground />
             <View style={styles.content}>
                 <TouchableOpacity onPress={() => router.back()}>
                     <ArrowLeft size={22} color="#000" variant="TwoTone" />
                 </TouchableOpacity>
                 <View style={styles.header}>
-                    <Text style={styles.headerText}>Termes et conditions applicables</Text>
+                    <Text style={styles.headerText}>Questions fréquemment posées</Text>
                 </View>
                 <ScrollView showsVerticalScrollIndicator={false}>
                     {text.map((item) => (
@@ -41,9 +47,11 @@ const TermsConditions = () => {
                             <Text style={styles.answerText}>Reponses : {item.reponse}</Text>
                         </View>
                     ))}
+                    <Text style={{ color: 'grey', fontFamily: "poppins" }}>
+                        Pour plus d'informations, veuillez contacter notre service clientèle par téléphone au 509 5565-7272 ou par email à <Text style={{ color: '#007bff', fontFamily: "poppinsMedium" }}>
+                            zig.bousanm@gmail.com </Text>
+                    </Text>
                 </ScrollView>
-                <Text>
-                </Text>
             </View>
         </View>
     )
@@ -80,4 +88,4 @@ const styles = StyleSheet.create({
         color: '#6b7280', // Tailwind "text-gray-500"
     },
 });
-export default TermsConditions
+export default FAQScreen

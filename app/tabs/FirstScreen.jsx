@@ -1,12 +1,15 @@
-import { View, Text, Image, ScrollView, Pressable, Dimensions } from 'react-native'
+import { View, Text, Image, ScrollView, Pressable, Dimensions, TouchableOpacity } from 'react-native'
 import React from 'react'
 import ImgBackground from '../../components/ImgBackground'
 import Ionicons from '@expo/vector-icons/Ionicons'
 import Carousel from "react-native-reanimated-carousel"
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5'
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
-import { LinearGradient } from 'expo-linear-gradient'
-import { Notification, EmptyWallet, MoneyRecive, WalletMoney, Bubble, ScanBarcode, ArrowSwapHorizontal, MoneySend, Moneys, } from 'iconsax-react-native';
+import iconList from '../../data/services'
+import MaterialIcons from '@expo/vector-icons/MaterialIcons'
+import { Notification, MoneyRecive, ScanBarcode, ArrowSwapHorizontal, MoneySend } from 'iconsax-react-native'
+// import DataTable, { COL_TYPES } from 'react-native-datatable-component'
+import { router } from 'expo-router'
 
 const FirstScreen = () => {
     var { width, height } = Dimensions.get("window");
@@ -30,32 +33,6 @@ const FirstScreen = () => {
             id: "4",
             uri: "https://i.pinimg.com/736x/44/c8/6b/44c86bda021f8797dc6dba39e70b3840.jpg",
             title: "Image 4",
-        },
-    ];
-    const iconList = [
-        {
-            id: 1,
-            icon: <EmptyWallet size="27" color="#000" variant="TwoTone" />,
-            name: "Ti kanè \n Bousanm",
-            desc: "Profitez de placements à court terme avec un taux d'intérêt compétitif de 12% par an, sur des périodes allant de 6 à 36 mois.",
-        },
-        {
-            id: 2,
-            icon: <WalletMoney size="27" color="#000" variant="TwoTone" />,
-            name: "Sòl \n ",
-            desc: "Nous proposons des services de mutuelle pour sécuriser vos investissements tout en permettant une gestion collective de vos fonds.",
-        },
-        {
-            id: 3,
-            icon: <Moneys size="27" color="#000" variant="TwoTone" />,
-            name: "Placement  \n",
-            desc: "Un carnet de gestion de portefeuille vous permettant de suivre vos investissements en toute simplicité, avec des options de dépôt et de retrait flexibles.",
-        },
-        {
-            id: 4,
-            icon: <Bubble size="27" color="#000" variant="TwoTone" />,
-            name: "Gestion \n Patrimoine",
-            desc: "Maximisez la valeur de vos actifs grâce à nos services de gestion de patrimoine, avec des conseils personnalisés pour optimiser vos investissements à long terme.",
         },
     ];
     const services = [
@@ -91,9 +68,14 @@ const FirstScreen = () => {
                 <View style={{ paddingHorizontal: 16, paddingVertical: 22 }}>
                     <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
                         <View style={{ flexDirection: "row", alignItems: "center", gap: 8, marginBottom: 16 }}>
-                            <Pressable style={{ width: 40, height: 40, borderRadius: 100, overflow: "hidden" }}>
-                                <Image source={require('../../assets/images/user.png')} style={{ width: "100%", height: "100%" }} />
-                            </Pressable>
+                            <View style={{ position: "relative" }}>
+                                <TouchableOpacity style={{ width: 55, height: 55, borderRadius: 100, overflow: "hidden", borderWidth: 2, borderColor: "#1d4ed8" }}>
+                                    <Image source={require('../../assets/images/profile.jpg')} style={{ width: "100%", height: "100%" }} />
+                                </TouchableOpacity>
+                                <TouchableOpacity>
+                                    <MaterialIcons name="verified" size={18} color="#1d4ed8" style={{ position: "absolute", bottom: 0, right: -4, zIndex: 10 }} />
+                                </TouchableOpacity>
+                            </View>
                             <View>
                                 <Text style={{ fontFamily: "poppinsMedium", fontSize: 14 }}>Hello 👋🏽, Mesidor</Text>
                                 <Text style={{ fontFamily: "poppinsMedium", fontSize: 12, marginTop: -4, color: "grey" }}>#6534267</Text>
@@ -122,8 +104,7 @@ const FirstScreen = () => {
                                     }}
                                 >99+</Text>
                             </View>
-
-                            <Pressable style={{
+                            <TouchableOpacity onPress={(() => router.push('../NotificationScreen'))} style={{
                                 width: 40,
                                 height: 40,
                                 borderRadius: 100,
@@ -135,18 +116,12 @@ const FirstScreen = () => {
 
                             }}>
                                 <Notification size="20" color="#000" variant="TwoTone" />
-                            </Pressable>
+                            </TouchableOpacity>
                         </View>
-
                     </View>
-                    <LinearGradient
-                        // Start and end positions for the gradient
-                        start={{ x: 0, y: 0 }}
-                        end={{ x: 1, y: 1 }}
-                        // Gradient colors
-                        colors={['#004e92', '#000428']}
-                        style={{ width: "100%", borderRadius: 10, padding: 16, flexDirection: "row", justifyContent: "space-between", overflow: "hidden" }}
-                    >
+
+                    <View style={{ width: "100%", backgroundColor: "#fff", borderRadius: 10, padding: 16, flexDirection: "row", justifyContent: "space-between", overflow: "hidden", position: "relative" }}>
+                        <Image source={require('../../assets/images/card.jpg')} blurRadius={5} style={{ resizeMode: "cover", width: "115%", height: 200, position: "absolute" }} />
                         <View style={{ height: 140, flexDirection: "column", justifyContent: "space-between" }}>
                             <View>
                                 <View style={{ flexDirection: "row", alignItems: "center", gap: 16 }}>
@@ -161,7 +136,7 @@ const FirstScreen = () => {
                                     <Text style={{ fontFamily: "poppinsMedium", fontSize: 10, color: "#e0e0e0" }} >HTG</Text>
                                 </View>
                             </View>
-                            <View style={{ borderRadius: 10, paddingVertical: 8, backgroundColor: "#047857", paddingHorizontal: 16 }}>
+                            <View style={{ borderRadius: 10, paddingVertical: 8, backgroundColor: "rgba(0,0,0,0.2)", paddingHorizontal: 16 }}>
                                 <Text style={{ fontFamily: "poppinsMedium", fontSize: 12, color: "#fff" }} >Sol</Text>
                                 <View style={{ marginTop: -4, flexDirection: "row", gap: 4 }}>
                                     <Text style={{ fontFamily: "poppinsBold", fontSize: 22, color: "#fff" }} >250</Text>
@@ -192,8 +167,7 @@ const FirstScreen = () => {
                                 </View>
                             </View>
                         </View>
-                    </LinearGradient>
-
+                    </View>
                 </View>
                 <View style={{ paddingHorizontal: 16, paddingVertical: 1 }}>
                     <View style={{ marginBottom: 32, paddingHorizontal: 12 }}>
@@ -224,6 +198,7 @@ const FirstScreen = () => {
                             Services
                         </Text>
                     </View>
+
                     <View style={{
                         padding: 16,
                         backgroundColor: "rgba(255, 255, 255,0.4)",
@@ -233,7 +208,7 @@ const FirstScreen = () => {
                     }}>
                         <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
                             {iconList.map((item) => (
-                                <Pressable key={item.id}>
+                                <Pressable key={item.id} onPress={() => router.push(`../ServicesPage/${item.id}`)}>
                                     <View style={{
                                         width: 64,
                                         height: 64,
@@ -242,6 +217,7 @@ const FirstScreen = () => {
                                         justifyContent: "center",
                                         alignItems: "center"
                                     }}>{item.icon}</View>
+
                                     <Text style={{ fontFamily: "poppinsMedium", fontSize: 10, textAlign: "center", marginTop: 5 }}>{item.name}</Text>
                                 </Pressable>
                             ))}
@@ -267,7 +243,7 @@ const FirstScreen = () => {
                         scrollAnimationDuration={1000}
                         data={images}
                         style={{ marginBottom: 20 }}
-                        onSnapToItem={(index) => console.log("current index:", index)}
+                        // onSnapToItem={(index) => console.log("current index:", index)}
                         renderItem={({ item }) => (
                             <Image
                                 source={{ uri: item.uri }}
