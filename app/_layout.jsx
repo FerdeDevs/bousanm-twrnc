@@ -1,7 +1,7 @@
 import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import 'react-native-reanimated';
 
 
@@ -9,6 +9,7 @@ import 'react-native-reanimated';
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
+  // Font Loaded ================================================================
   const [loaded] = useFonts({
     poppins: require('../assets/fonts/Poppins-Regular.ttf'),
     poppinsMedium: require('../assets/fonts/Poppins-Medium.ttf'),
@@ -16,6 +17,7 @@ export default function RootLayout() {
   });
 
   useEffect(() => {
+    // Hide the splash screen when the fonts have loaded.
     if (loaded) {
       SplashScreen.hideAsync();
     }
@@ -24,6 +26,8 @@ export default function RootLayout() {
   if (!loaded) {
     return null;
   }
+
+  // End font Loaded =================================================================
 
   return (
     <Stack screenOptions={{ headerShown: false }}>

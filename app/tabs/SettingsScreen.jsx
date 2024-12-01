@@ -110,7 +110,7 @@ const SettingsScreen = () => {
                     </TouchableOpacity>
                 </View>
             </RBSheet>
-            <ScrollView showsVerticalScrollIndicator={false} style={{ paddingHorizontal: 16, paddingVertical: 22, marginBottom: 6 }}>
+            <ScrollView showsVerticalScrollIndicator={false} style={{ paddingHorizontal: 16, paddingVertical: 22, paddingBottom: 6, marginBottom: 6, }}>
                 {/* Header account */}
                 <View>
                     <View style={{ flexDirection: "row", alignItems: "center", gap: 12, marginBottom: 16 }}>
