@@ -46,31 +46,7 @@ const InfoScreen = () => {
                         ))
                     }
                 </ScrollView>
-                {/* <View
-                    style={{
-                        backgroundColor: "rgba(255,255,255,0.5)",
-                        borderRadius: 16,
-                        padding: 16,
-                        marginBottom: 16,
-                        shadowColor: "#000",
-                        shadowOffset: { width: 0, height: 1 }
-                    }}>
-                    <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
-                        <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>
-                            <TouchableOpacity style={{ width: 35, height: 35, borderRadius: 100, overflow: "hidden", borderWidth: 2, borderColor: "#1d4ed8" }}>
-                                <Image source={require('../../assets/images/profile.jpg')} style={{ width: "100%", height: "100%" }} />
-                            </TouchableOpacity>
-                            <View>
-                                <Text style={{ fontFamily: "poppins", fontSize: 14 }}>Mesidor MACKENSON</Text>
-                                <Text style={{ fontFamily: "poppins", fontSize: 10, marginTop: -4, color: "grey" }}>12 Aout 2012</Text>
-                            </View>
-                        </View>
-                        <TouchableOpacity>
-                            <Feather name="more-vertical" size={24} color="black" />
-                        </TouchableOpacity>
-                    </View>
-                    <View style={{ width: "100%", height: 1, backgroundColor: "#000", marginVertical: 12 }} />
-                </View> */}
+
             </View>
         </View>
     )

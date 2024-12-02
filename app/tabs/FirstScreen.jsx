@@ -8,7 +8,7 @@ import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 import iconList from '../../data/services'
 import MaterialIcons from '@expo/vector-icons/MaterialIcons'
 import { Notification, MoneyRecive, ScanBarcode, ArrowSwapHorizontal, MoneySend } from 'iconsax-react-native'
-// import DataTable, { COL_TYPES } from 'react-native-datatable-component'
+import AntDesign from '@expo/vector-icons/AntDesign'
 import { router } from 'expo-router'
 
 const FirstScreen = () => {
@@ -177,7 +177,7 @@ const FirstScreen = () => {
                                     <View style={{
                                         width: 58,
                                         height: 58,
-                                        backgroundColor: "#172554",
+                                        backgroundColor: "#1e3a8a",
                                         borderRadius: 10,
                                         justifyContent: "center",
                                         alignItems: "center",
@@ -256,6 +256,113 @@ const FirstScreen = () => {
                             />
                         )}
                     />
+                    <View
+                        style={{
+                            backgroundColor: "rgba(255,255,255,0.5)",
+                            borderRadius: 16,
+                            padding: 16,
+                            marginBottom: 16,
+                            width: "100%",
+                            justifyContent: "space-between",
+                        }}>
+                        <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
+                            <View>
+                                <Text style={{ fontFamily: "poppinsMedium", fontSize: 14, color: "#172554" }}>
+                                    Dernière Transactions
+                                </Text>
+                                <Text style={{ fontFamily: "poppinsBold", fontSize: 18, color: "#172554" }}>
+                                    1 600 HTG
+                                </Text>
+                            </View>
+                            <View style={{ backgroundColor: "#172554", paddingHorizontal: 16, paddingVertical: 5, justifyContent: "center", alignItems: "center", borderRadius: 100 }}>
+                                <Text style={{ fontFamily: "poppinsMedium", fontSize: 10, color: "#fff" }}>
+                                    Depot
+                                </Text>
+                            </View>
+                        </View>
+
+                        <View>
+                            <Text style={{ fontFamily: "poppinsMedium", fontSize: 10, color: "#172554" }}>
+                                12-07-2024
+                            </Text>
+                        </View>
+                    </View>
+
+                    <View
+                        style={{
+                            backgroundColor: "rgba(255,255,255,0.5)",
+                            borderRadius: 16,
+                            padding: 16,
+                            marginBottom: 16,
+                            width: "100%",
+                            justifyContent: "space-between",
+                        }}>
+                        <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
+                            <View>
+                                <Text style={{ fontFamily: "poppinsMedium", fontSize: 14, color: "#172554" }}>
+                                    Nombre de jours payé
+                                </Text>
+                                <Text style={{ fontFamily: "poppinsBold", fontSize: 18, color: "#172554" }}>
+                                    13
+                                </Text>
+                            </View>
+                            <View style={{ alignItems: "center" }}>
+                                <Text style={{ fontFamily: "poppinsMedium", fontSize: 10, color: "#172554" }}>
+                                    sur
+                                </Text>
+                                <View style={{ backgroundColor: "#172554", width: 35, height: 35, justifyContent: "center", alignItems: "center", borderRadius: 100 }}>
+                                    <Text style={{ fontFamily: "poppinsMedium", fontSize: 14, color: "#fff", marginTop: 3 }}>
+                                        54
+                                    </Text>
+                                </View>
+                            </View>
+
+                        </View>
+
+                        <View>
+                            <Text style={{ fontFamily: "poppinsMedium", fontSize: 10, color: "#172554" }}>
+                                <AntDesign name="arrowdown" size={12} color="#172554" />
+                            </Text>
+                        </View>
+                    </View>
+
+                    <View
+                        style={{
+                            backgroundColor: "rgba(255,255,255,0.5)",
+                            borderRadius: 16,
+                            padding: 16,
+                            marginBottom: 16,
+                            width: "100%",
+                            justifyContent: "space-between",
+                        }}>
+                        <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
+                            <View>
+                                <Text style={{ fontFamily: "poppinsMedium", fontSize: 14, color: "#172554" }}>
+                                    Nombre de jours non payé
+                                </Text>
+                                <Text style={{ fontFamily: "poppinsBold", fontSize: 18, color: "#172554" }}>
+                                    43
+                                </Text>
+                            </View>
+                            <View style={{ alignItems: "center" }}>
+                                <Text style={{ fontFamily: "poppinsMedium", fontSize: 10, color: "#172554" }}>
+                                    sur
+                                </Text>
+                                <View style={{ backgroundColor: "#172554", width: 35, height: 35, justifyContent: "center", alignItems: "center", borderRadius: 100 }}>
+                                    <Text style={{ fontFamily: "poppinsMedium", fontSize: 14, color: "#fff", marginTop: 3 }}>
+                                        10
+                                    </Text>
+                                </View>
+                            </View>
+
+                        </View>
+
+                        <View>
+                            <Text style={{ fontFamily: "poppinsMedium", fontSize: 10, color: "red" }}>
+                                <AntDesign name="arrowup" size={12} color="red" /> 24 600 HTG
+                            </Text>
+                        </View>
+                    </View>
                 </View>
             </ScrollView>
         </View>
